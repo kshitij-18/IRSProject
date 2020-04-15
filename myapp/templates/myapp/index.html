@@ -1,0 +1,29 @@
+{% extends 'myapp/base.html' %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">User id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{ user.id }}</th>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+        </tr>
+    </tbody>
+</table>
+{% else %}
+<h1>Please Login to see you credenetials</h1>
+{% endif %}
+
+{% endblock content %}
