@@ -13,18 +13,7 @@ def home(request):
 
 
 def register(request):
-    '''form = RegisterForm(request.POST or None)
-    context = {
-        "form": form
-    }
-    if form.is_valid():
-        form.save()
-        messages.success(request, "User Created Successfully")
-        return redirect('home')
-    else:
-        messages.info(request, "Something went wrong")
-        return redirect('register')
-    return render(request, "myapp/register.html", context)'''
+
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
